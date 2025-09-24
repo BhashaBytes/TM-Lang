@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TM-Lang: Tamil-Inspired Programming</title>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="https://bhashabytes.github.io/" class="site-logo" aria-label="BhashaBytes Home">
+    <img src="logo.png" alt="BhashaBytes Logo" />
+  </a>
+  <h1>TM-Lang: Tamil-Inspired Programming</h1>
+
+  <div class="intro-card">
+    <p>
+      Welcome to <strong>TM-Lang</strong> – a programming language designed especially for Tamil speakers!
+      TM-Lang makes coding more intuitive by using Tamil words and their transliterations as keywords,
+      instead of English-based Python syntax. It’s beginner-friendly and runs fully on Python via a translation layer.
+    </p>
+    <p>
+      Write code below, run it instantly, and explore TM-Lang’s features with live examples. Learning programming
+      has never been this friendly!
+    </p>
+  </div>
+
+  <div class="container">
+    <textarea id="tamilCode" rows="10">காட்டிடு("வணக்கம் TM-Lang!")</textarea>
+    <br>
+    <button onclick="runCode()">Run Code</button>
+    <pre id="output">Output will appear here...</pre>
+  </div>
+
+  <h2>Documentation & Examples</h2>
+  <div class="docs">
+    <h3>Print (காட்டிடு / kaattidu)</h3>
+    <pre>காட்டிடு("வணக்கம் உலகமே")</pre>
+
+    <h3>Functions (வரையிடு / varaiyidu)</h3>
+    <pre>வரையிடு கூட்டு(a, b):
+    திருப்பிடு a + b
+
+காட்டிடு("மொத்தம் =", கூட்டு(3, 5))</pre>
+
+    <h3>Input (எடுத்து / eduthu)</h3>
+    <pre>a = int(எடுத்து("எண் 1:"))
+b = int(எடுத்து("எண் 2:"))
+காட்டிடு("மொத்தம் =", a + b)</pre>
+
+    <h3>Conditionals</h3>
+    <pre>i = 5
+என்றால் i > 3:
+    காட்டிடு("பெரியது")
+இல்லை_என்றால் i == 3:
+    காட்டிடு("சமம்")
+இல்லை:
+    காட்டிடு("சிறியது")</pre>
+
+    <h3>Loops</h3>
+    <pre>காக x in [1,2,3]:
+    காட்டிடு("x =", x)
+
+i = 0
+போது i < 3:
+    காட்டிடு("i =", i)
+    i += 1</pre>
+
+    <h3>Loop Control</h3>
+    <pre>காக x in [1,2,3]:
+    என்றால் x == 2:
+        காட்டிடு("இரண்டு கண்டுபிடிக்கப்பட்டது")
+        நிறுத்திடு
+    இல்லை:
+        காட்டிடு(x)</pre>
+
+    <h3>Booleans & None</h3>
+    <pre>என்றால் உண்மை:
+    காட்டிடு("true")
+இல்லை_என்றால் பொய்:
+    காட்டிடு("false")
+காட்டிடு("வெற்று =", ஒன்றுமில்லை)</pre>
+
+    <h3>Exceptions</h3>
+    <pre>முயற்சிடு:
+    1 / 0
+தவிர ZeroDivisionError:
+    காட்டிடு("பூஜ்யத்தால் பகுக்க முடியாது")
+இறுதியில்:
+    காட்டிடு("எப்போதும் இயங்கும்")</pre>
+
+    <h3>Imports</h3>
+    <pre>உள்ளிடு math ஆக m
+காட்டிடு(m.sqrt(16))</pre>
+  </div>
+
+  <h2>TM-Lang Keywords</h2>
+  <div class="reference-box">
+    <table>
+      <thead>
+        <tr><th>Python</th><th>Tamil</th><th>Transliteration</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>print</td><td>காட்டிடு</td><td>kaattidu</td></tr>
+        <tr><td>input</td><td>எடுத்து</td><td>eduthu</td></tr>
+        <tr><td>if</td><td>என்றால்</td><td>enraal</td></tr>
+        <tr><td>elif</td><td>இல்லை_என்றால்</td><td>illainraal</td></tr>
+        <tr><td>else</td><td>இல்லை</td><td>illai</td></tr>
+        <tr><td>for</td><td>காக</td><td>kaga</td></tr>
+        <tr><td>while</td><td>போது</td><td>pothu</td></tr>
+        <tr><td>def</td><td>வரையிடு</td><td>varaiyidu</td></tr>
+        <tr><td>class</td><td>வகுப்பு</td><td>vaguppu</td></tr>
+        <tr><td>return</td><td>திருப்பிடு</td><td>thiruppidu</td></tr>
+        <tr><td>break</td><td>நிறுத்திடு</td><td>niruthidu</td></tr>
+        <tr><td>continue</td><td>தொடரிடு</td><td>thodaridu</td></tr>
+        <tr><td>import</td><td>உள்ளிடு</td><td>ulkollu</td></tr>
+        <tr><td>from</td><td>இருந்து</td><td>irundhu</td></tr>
+        <tr><td>as</td><td>ஆக</td><td>aaga</td></tr>
+        <tr><td>with</td><td>உடன்</td><td>udan</td></tr>
+        <tr><td>try</td><td>முயற்சிடு</td><td>muyarchidu</td></tr>
+        <tr><td>except</td><td>தவிர</td><td>thavira</td></tr>
+        <tr><td>finally</td><td>இறுதியில்</td><td>iruthil</td></tr>
+        <tr><td>True</td><td>உண்மை</td><td>unmai</td></tr>
+        <tr><td>False</td><td>பொய்</td><td>poi</td></tr>
+        <tr><td>None</td><td>ஒன்றுமில்லை</td><td>onrumillai</td></tr>
+        <tr><td>or</td><td>அல்லது</td><td>allatu</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let pyodideReady = false, pyodide;
+    async function loadPyodideAndPackages() {
+      pyodide = await loadPyodide();
+      pyodide.runPython(`
+import sys
+from js import document, prompt
+class OutputCatcher:
+  def write(self, s):
+    if s.strip():
+      document.getElementById("output").textContent += s + "\\n"
+  def flush(self): pass
+sys.stdout = OutputCatcher()
+sys.stderr = OutputCatcher()
+def input(msg=""):
+  resp = prompt(str(msg))
+  return "" if resp is None else str(resp)
+`);
+      pyodideReady = true;
+    }
+    loadPyodideAndPackages();
+
+    const mapping = {
+      "காட்டிடு":"print","kaattidu":"print",
+      "எடுத்து":"input","eduthu":"input",
+      "என்றால்":"if","enraal":"if",
+      "இல்லை_என்றால்":"elif","illainraal":"elif",
+      "இல்லை":"else","illai":"else",
+      "காக":"for","kaga":"for",
+      "போது":"while","pothu":"while",
+      "வரையிடு":"def","varaiyidu":"def",
+      "வகுப்பு":"class","vaguppu":"class",
+      "திருப்பிடு":"return","thiruppidu":"return",
+      "நிறுத்திடு":"break","niruthidu":"break",
+      "தொடரிடு":"continue","thodaridu":"continue",
+      "உள்ளிடு":"import","ulkollu":"import",
+      "இருந்து":"from","irundhu":"from",
+      "ஆக":"as","aaga":"as",
+      "உடன்":"with","udan":"with",
+      "முயற்சிடு":"try","muyarchidu":"try",
+      "தவிர":"except","thavira":"except",
+      "இறுதியில்":"finally","iruthil":"finally",
+      "உண்மை":"True","unmai":"True",
+      "பொய்":"False","poi":"False",
+      "ஒன்றுமில்லை":"None","onrumillai":"None",
+      "அல்லது":"or","allatu":"or"
+    };
+
+    function escapeRegExp(str) {
+      return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function translate(code) {
+      for (let tam in mapping) {
+        const re = new RegExp(`(?<!\\w)${escapeRegExp(tam)}(?!\\w)`, 'gu');
+        code = code.replace(re, mapping[tam]);
+      }
+      return code;
+    }
+
+    async function runCode() {
+      if (!pyodideReady) { alert("Loading..."); return; }
+      document.getElementById("output").textContent = "";
+      const rawCode = document.getElementById("tamilCode").value;
+      const pyCode = translate(rawCode);
+      try { await pyodide.runPythonAsync(pyCode); }
+      catch(err) { document.getElementById("output").textContent += "Error: "+err+"\n"; }
+    }
+  </script>
+</body>
+</html>
